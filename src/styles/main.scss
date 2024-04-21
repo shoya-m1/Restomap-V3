@@ -1,0 +1,599 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@400;500;600;700&display=swap");
+
+$dark: rgb(94, 94, 94);
+$white: white;
+$primary: rgb(253, 160, 0);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button:focus,
+a:focus,
+[tabindex="0"]:focus {
+  outline: 2px solid $primary !important;
+  border: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: $dark;
+  background-color: $white;
+}
+
+/* ======== loader ========  */
+.load {
+  position: fixed;
+  z-index: 100;
+  background-color: $white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.75s all;
+}
+.loader-hiden {
+  opacity: 0;
+}
+.loader {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  animation: rotate92523 2s infinite cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.loader::before {
+  background-color: $primary;
+}
+
+.loader::after {
+  background-color: #e8751a;
+  animation-delay: 1s;
+}
+
+@keyframes rotate92523 {
+  0%,
+  100% {
+    left: 35px;
+  }
+
+  25% {
+    transform: scale(0.3);
+  }
+
+  50% {
+    left: 0%;
+  }
+
+  75% {
+    transform: scale(1);
+  }
+}
+/* ======== /loader ========  */
+
+/* ======== navbar ========  */
+header nav {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding: 44px;
+  width: 100%;
+  justify-content: space-between;
+  transition: 0.3s all;
+  z-index: 99;
+  color: $primary;
+  background-color: $white;
+}
+.logo {
+  position: relative;
+}
+.brand {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.skip-link {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  left: -190%;
+  background-color: $primary;
+  color: $white;
+  padding: 8px;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 0;
+  border: none;
+  outline: none;
+}
+.nav-list {
+  list-style-type: none;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu {
+  display: none;
+}
+#checkbox2 {
+  display: none;
+}
+
+.toggle2 {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition-duration: 0.5s;
+}
+
+.bars {
+  width: 45%;
+  height: 3px;
+  background-color: $dark;
+  border-radius: 6px;
+}
+
+#bar5 {
+  transition-duration: 0.8s;
+}
+
+#bar4,
+#bar6 {
+  width: 60%;
+}
+
+#checkbox2:checked + .toggle2 .bars {
+  position: absolute;
+  transition-duration: 0.5s;
+}
+
+#checkbox2:checked + .toggle2 #bar5 {
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+}
+
+#checkbox2:checked + .toggle2 #bar4 {
+  width: 70%;
+  transform: rotate(45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox2:checked + .toggle2 #bar6 {
+  width: 70%;
+  transform: rotate(-45deg);
+  transition-duration: 0.5s;
+}
+
+#checkbox2:checked + .toggle2 {
+  transition-duration: 0.5s;
+  transform: rotate(180deg);
+}
+
+.nav-list li {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-list li a {
+  padding: 22px 0px;
+  text-decoration: none;
+  font-weight: 600;
+  color: $dark;
+  transition: 0.3s all;
+}
+.nav-list li a:hover {
+  color: $primary !important;
+}
+.toggle {
+  border: none;
+  background: none;
+}
+/* ======== /navbar ========  */
+
+/* ======== jumbotron ========  */
+hero-section {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../public/images/heros/hero-image_4.jpg");
+  background-color: rgba(0, 0, 0, 0.555);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.hero-inner {
+  position: sticky;
+  top: 15%;
+  padding-bottom: 40px;
+  width: 60%;
+}
+.hero-inner b {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: $white;
+  font-size: 30px;
+}
+
+.hero-inner h2 {
+  font-size: 50px;
+  color: $white;
+}
+.hero-inner p {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(245, 245, 245, 0.808);
+}
+/* ======== /jumbotron ========  */
+
+/* ======== main Content ========  */
+.content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 30px;
+  position: relative;
+  transition: 1s ease;
+}
+.content .shape {
+  position: absolute;
+  top: -34px;
+  left: 0;
+  width: 100%;
+  height: 35px;
+}
+.content h3 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.content-inner ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+// detail
+.detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+detail-restaurant {
+  width: 70%;
+  margin-top: 90px;
+}
+detail-restaurant h1 {
+  text-align: center;
+  padding: 20px 0px;
+}
+.detail-img {
+  width: 100%;
+}
+
+detail-restaurant > .detail-img img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  gap: 10px;
+  margin: 8px 0px 30px 0px;
+  color: rgb(71, 71, 71);
+  font-size: 14px;
+}
+
+.info {
+  text-align: justify;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+.daftar-menu {
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+}
+.makanan ul li,
+.minuman ul li {
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+.comment {
+  margin-top: 20px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.comment::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 70px;
+  height: 2px;
+  background-color: rgb(94, 94, 94);
+}
+
+.view-comment {
+  width: 100%;
+  margin-top: 40px;
+  list-style: none;
+}
+.view-comment li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+.view-comment-margin {
+  margin-left: 40px;
+}
+.icon-user {
+  width: 60px;
+  height: 60px;
+  padding: 3px;
+  border: 1px solid rgb(94, 94, 94);
+  display: flex;
+  border-radius: 50%;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-user > div {
+  margin-top: 8px;
+  width: 70%;
+  height: 70%;
+  position: relative;
+  overflow: hidden;
+}
+.icon-user > div::before {
+  position: absolute;
+  content: "";
+  width: 55%;
+  height: 55%;
+  border-radius: 50%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(94, 94, 94);
+}
+.icon-user > div::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 40%;
+  bottom: -65%;
+  background-color: rgb(94, 94, 94);
+}
+.info-comment {
+  width: 50vw;
+}
+.info-comment b {
+  font-size: 18px;
+}
+.info-comment > p:nth-child(2) {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.info-comment p:nth-child(3) {
+  font-size: 15px;
+}
+.add-review {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#captionReview {
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  border: solid 1.5px rgb(94, 94, 94);
+  border-radius: 15px;
+  background: none;
+  padding: 0.7rem;
+  width: 100%;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+
+  color: rgb(94, 94, 94);
+  transition: 0.3s all;
+}
+
+.user-label {
+  position: absolute;
+  left: 15px;
+  font-size: 15px;
+  color: rgb(94, 94, 94);
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.8);
+  background-color: white;
+  padding: 0 0.3em;
+}
+.input:focus {
+  appearance: none;
+  outline: none;
+  box-shadow: 5px 5px 10px rgba(94, 94, 94, 0.23);
+}
+
+.input::placeholder {
+  font-size: 13px;
+  color: rgba(94, 94, 94, 0.482);
+}
+
+.submit {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(94, 94, 94, 0.811);
+  padding: 1em 2em;
+  border: none;
+  border-radius: 0.6rem;
+  width: 100px;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s all linear;
+}
+.submit:hover {
+  background-color: $primary;
+}
+
+// like
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+/* ======== /main Content ========  */
+
+/* ======== footer ========  */
+footer {
+  margin-top: 60px;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.485);
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  align-items: center;
+}
+/* ======== /footer ========  */
+
+@media screen and (max-width: 900px) {
+  nav {
+    color: $primary !important;
+    background-color: $white !important;
+  }
+
+  .menu {
+    display: block;
+  }
+  .nav-list {
+    position: absolute;
+    right: -100%;
+    top: 80px;
+    width: 250px;
+    padding: 30px 0px;
+    justify-content: right;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    transition: 0.7s all;
+    background-color: $white;
+  }
+  .menu-view {
+    right: 0;
+    transition: 0.7s all;
+  }
+  .nav-item a {
+    color: $dark !important;
+  }
+  .view-comment-margin {
+    margin-left: 0;
+  }
+  .icon-user {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-user > div {
+    margin-top: 6px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    padding: 40px 30px !important;
+  }
+  .hero-inner {
+    width: 80%;
+  }
+  .hero-inner b {
+    font-size: 18px;
+  }
+  .hero-inner h2 {
+    font-size: 30px;
+  }
+  .hero-inner p {
+    font-size: 11px;
+  }
+
+  detail-restaurant {
+    width: 85%;
+    margin-top: 90px;
+  }
+  .address {
+    gap: 5px;
+  }
+  .daftar-menu {
+    gap: 20px;
+  }
+}

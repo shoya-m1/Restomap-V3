@@ -1,0 +1,18 @@
+{
+  "id": "retaurant-catalogue-pwa-1",
+  "start_url": "./index.html",
+  "name": "Restaurant Catalogue",
+  "short_name": "RestoMap",
+  "description": "find the nearest restaurant in your city",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FDA000",
+  "icons": [
+    {
+      "src": "/icons/logo-344x344.png",
+      "sizes": "344x344",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
