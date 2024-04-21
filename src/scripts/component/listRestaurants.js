@@ -1,9 +1,9 @@
-import CONFIG from "../globals/config";
+import CONFIG from '../globals/config';
 
 class ListRestorants extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: "open" });
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
@@ -16,7 +16,7 @@ class ListRestorants extends HTMLElement {
   }
 
   render() {
-    this.shadowDOM.innerHTML = /*html*/ ` 
+    this.shadowDOM.innerHTML = /* html */ ` 
           <style>
               :host {
                 width: 350px;
@@ -117,4 +117,4 @@ class ListRestorants extends HTMLElement {
   }
 }
 
-customElements.define("list-restaurants", ListRestorants);
+customElements.define('list-restaurants', ListRestorants);

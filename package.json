@@ -5,7 +5,7 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist --port 8080",
+    "serve": "http-server dist --port 8000",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint ./src --fix"

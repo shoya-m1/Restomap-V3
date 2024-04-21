@@ -1,7 +1,7 @@
-import FavoriteRestaurantIdb from "../data/favoriteIdb";
-import "../component/likeButton";
-import "../component/likedButton";
-import $ from "jquery";
+import $ from 'jquery';
+import FavoriteRestaurantIdb from '../data/favoriteIdb';
+import '../component/likeButton';
+import '../component/likedButton';
 
 const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {
@@ -27,20 +27,20 @@ const LikeButtonInitiator = {
   },
 
   _renderLike() {
-    const likeButton = $(document.createElement("like-button"));
+    const likeButton = $(document.createElement('like-button'));
     this._likeButtonContainer.html(likeButton);
 
-    $("#likeButton").on("click", async () => {
+    $('#likeButton').on('click', async () => {
       await FavoriteRestaurantIdb.putRestaurant(this._resto);
       this._renderButton();
     });
   },
 
   _renderLiked() {
-    const likedButton = $(document.createElement("liked-button"));
+    const likedButton = $(document.createElement('liked-button'));
     this._likeButtonContainer.html(likedButton);
 
-    $("#likeButton").on("click", async () => {
+    $('#likeButton').on('click', async () => {
       await FavoriteRestaurantIdb.deleteRestaurant(this._resto.id);
       this._renderButton();
     });

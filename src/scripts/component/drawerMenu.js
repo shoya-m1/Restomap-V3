@@ -4,7 +4,7 @@ class DrawerMenu extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = /*html*/ `
+    this.innerHTML = /* html */ `
       <input id="checkbox2" type="checkbox" />
       <button
         tabindex="0"
@@ -20,4 +20,4 @@ class DrawerMenu extends HTMLElement {
   }
 }
 
-customElements.define("drawer-menu", DrawerMenu);
+customElements.define('drawer-menu', DrawerMenu);

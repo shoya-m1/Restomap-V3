@@ -1,4 +1,4 @@
-import API_ENDPOINT from "../globals/apiEndpoint";
+import API_ENDPOINT from '../globals/apiEndpoint';
 
 class restaurantSource {
   static async home() {
@@ -7,7 +7,7 @@ class restaurantSource {
       const responseJson = await response.json();
       return responseJson.restaurants;
     } catch {
-      throw new Error("Terjadi kesalahan saat memproses data.");
+      throw new Error('Terjadi kesalahan saat memproses data.');
     }
   }
 
@@ -17,15 +17,15 @@ class restaurantSource {
       const responseJson = await response.json();
       return responseJson.restaurant;
     } catch {
-      throw new Error("Terjadi kesalahan saat memproses data.");
+      throw new Error('Terjadi kesalahan saat memproses data.');
     }
   }
 
   static async addReview(data) {
     const response = await fetch(API_ENDPOINT.REVIEW, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
@@ -33,7 +33,7 @@ class restaurantSource {
       const responseJson = await response.json();
       return responseJson;
     } catch (error) {
-      throw new Error("Terjadi kesalahan saat memproses data.");
+      throw new Error('Terjadi kesalahan saat memproses data.');
     }
   }
 }

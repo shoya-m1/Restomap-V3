@@ -1,6 +1,6 @@
-import FavoriteRestaurantIdb from "../../data/favoriteIdb";
-import "../../component/listRestaurants";
-import $ from "jquery";
+import $ from 'jquery';
+import FavoriteRestaurantIdb from '../../data/favoriteIdb';
+import '../../component/listRestaurants';
 
 const Favorite = {
   async render() {
@@ -16,13 +16,21 @@ const Favorite = {
   },
 
   async afterRender() {
-    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    $('.load').css('display', 'flex');
+    try {
+      const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
 
-    restaurants.forEach((resto) => {
-      const listResto = $("<list-restaurants></list-restaurants>").get(0);
-      listResto.resto = resto;
-      $(".mainCard").append(listResto);
-    });
+      restaurants.forEach((resto) => {
+        const listResto = $('<list-restaurants></list-restaurants>').get(0);
+        listResto.resto = resto;
+        $('.mainCard').append(listResto);
+      });
+      $('.load').css('display', 'none');
+    } catch (error) {
+      $('.content-inner').html(
+        "<p class='errorHandling'>Terjadi kesalahan saat memuat data restoran.</p>",
+      );
+    }
   },
 };
 

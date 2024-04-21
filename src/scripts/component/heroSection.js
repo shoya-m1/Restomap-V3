@@ -4,7 +4,7 @@ class HeroSection extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = /*html*/ `
+    this.innerHTML = /* html */ `
     <div class="hero-inner">
       <b tabindex="0">Welcome To</b>
       <h2 id="title" tabindex="0">Restaurant Mapping</h2>
@@ -19,4 +19,4 @@ class HeroSection extends HTMLElement {
   }
 }
 
-customElements.define("hero-section", HeroSection);
+customElements.define('hero-section', HeroSection);

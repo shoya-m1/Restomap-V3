@@ -4,7 +4,7 @@ class LikedButton extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = /*html*/ `
+    this.innerHTML = /* html */ `
         <button aria-label="unlike this restaurant" id="likeButton" class="like">
             <i class="fa fa-heart" aria-hidden="true"></i>
         </button>
@@ -12,4 +12,4 @@ class LikedButton extends HTMLElement {
   }
 }
 
-customElements.define("liked-button", LikedButton);
+customElements.define('liked-button', LikedButton);

@@ -4,11 +4,11 @@ class AppBar extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = /*html*/ `
+    this.innerHTML = /* html */ `
     <h1 tabindex="0">RESTOMAP</h1>
     <a href="#mainContent" class="skip-link">Menuju ke konten</a>
     `;
   }
 }
 
-customElements.define("app-bar", AppBar);
+customElements.define('app-bar', AppBar);
