@@ -6,7 +6,7 @@ class AppBar extends HTMLElement {
   render() {
     this.innerHTML = /* html */ `
     <h1 tabindex="0">RESTOMAP</h1>
-    <a href="#mainContent" class="skip-link">Menuju ke konten</a>
+    <a href="#mainContent" class="skip-link" tabindex='0'>Menuju ke konten</a>
     `;
   }
 }

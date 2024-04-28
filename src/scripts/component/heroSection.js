@@ -11,8 +11,7 @@ class HeroSection extends HTMLElement {
     
       <p tabindex="0">
         Jelajahi ragam makanan lezat dari restoran-restoran terbaik di kota
-        Anda. Menemukan Perpaduan Rasa yang Memukau, dan Menghadirkan
-        Pengalaman Kuliner yang Mengesankan.
+        Anda.
       </p>
     </div>
   `;

@@ -1,4 +1,6 @@
 import CONFIG from '../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 class ListRestorants extends HTMLElement {
   constructor() {
@@ -99,11 +101,11 @@ class ListRestorants extends HTMLElement {
           </style>
           
           <div class="content-img">
-             <img src="${CONFIG.BASE_IMAGE_URL}${this._resto.pictureId}" alt="img-content" />
+             <img loading="lazy" class="lazyload" width="400" height="400" src="${CONFIG.BASE_IMAGE_URL}${this._resto.pictureId}" alt="img-content" />
           </div>
           <div class="content-info">
               <b tabindex="0">
-              <a href="/#/detail/${this._resto.id}">${this._resto.name}</b></a>
+              <a class="getName" href="/#/detail/${this._resto.id}">${this._resto.name}</b></a>
               <div class="content-review">
                 <p tabindex="0">${this._resto.rating}</p>
                 |

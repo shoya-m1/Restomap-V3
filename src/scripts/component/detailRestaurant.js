@@ -53,7 +53,7 @@ class DetailRestaurant extends HTMLElement {
       this.innerHTML = /* html */ `
          <h1 tabindex="0">Detail Restaurant</h1>
          <div tabindex="0" class="detail-img">
-           <img src="${CONFIG.BASE_IMAGE_URL}${this._resto.pictureId}" alt="detail-img" />
+           <img loading="lazy" width="400" height="400" src="${CONFIG.BASE_IMAGE_URL}${this._resto.pictureId}" alt="detail-img" />
          </div>
          <h2 tabindex="0">${this._resto.name}</h2>
          <ul tabindex="0" class="address">

@@ -2,7 +2,7 @@ import '../../component/detailRestaurant';
 import $ from 'jquery';
 import UrlParser from '../../routes/urlParser';
 import source from '../../data/source';
-import LikeButtonInitiator from '../../utils/likeButtonInitiator';
+import LikeButtonPresenter from '../../utils/likeButtonPresenter';
 
 const Detail = {
   async render() {
@@ -23,7 +23,7 @@ const Detail = {
       $('.detail').html(detailResto);
 
       $('.load').css('display', 'none');
-      LikeButtonInitiator.init({
+      LikeButtonPresenter.init({
         likeButtonContainer: $('.likeButtonContainer'),
         restaurant: {
           id: restaurant.id,
@@ -31,6 +31,7 @@ const Detail = {
           description: restaurant.description,
           pictureId: restaurant.pictureId,
           rating: restaurant.rating,
+          city: restaurant.city,
         },
       });
     } catch (error) {

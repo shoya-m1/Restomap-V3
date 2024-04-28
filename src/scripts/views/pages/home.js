@@ -10,7 +10,6 @@ const Home = {
     
     </hero-section>
     <section class="content" id="content">
-        <img tabindex="-1" class="shape" src="./images/shape.png" alt="shape" />
         <h3 tabindex="0">Explore Restaurant</h3>
         <div class="content-inner">
           <ul class="mainCard">
